@@ -5,13 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>f1768f36-9ed3-4c36-9dce-9535aefb0732</ProjectGuid>
+    <ProjectGuid>F1768F36-9ED3-4C36-9DCE-9535AEFB0732</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>NuEdit</RootNamespace>
     <AssemblyName>NuEdit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Name>NuEdit</Name>
     <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
+    <ProductVersion>12.0.0</ProductVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,9 +38,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="FSharpx.Core">
       <HintPath>..\..\FSharpx.Core\FSharpx.Core.dll</HintPath>
     </Reference>
@@ -67,35 +65,26 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Prime\Prime\Prime\Prime.fsproj">
       <Name>Prime</Name>
-      <Project>{fe09ae81-b66b-42e0-8192-eadecefc9893}</Project>
-      <Private>True</Private>
+      <Project>{FE09AE81-B66B-42E0-8192-EADECEFC9893}</Project>
     </ProjectReference>
     <ProjectReference Include="..\NuEditDesign\NuEditDesign.csproj">
       <Name>NuEditDesign</Name>
-      <Project>{f67217c1-6bb3-4180-916b-b7b4cdc14c2d}</Project>
-      <Private>True</Private>
+      <Project>{F67217C1-6BB3-4180-916B-B7B4CDC14C2D}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Nu\Nu.fsproj">
       <Name>Nu</Name>
-      <Project>{a7a6f758-e122-4c2c-9525-1f29802d007c}</Project>
-      <Private>True</Private>
+      <Project>A7A6F758-E122-4C2C-9525-1F29802D007C</Project>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
-  <Choose>
-    <When Condition="'$(VisualStudioVersion)' == '11.0'">
-      <PropertyGroup>
-        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
-      </PropertyGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup>
-        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
-      </PropertyGroup>
-    </Otherwise>
-  </Choose>
+  <PropertyGroup>
+    <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '11.0' Or $(OS) != 'Windows_NT'">
+    <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+  </PropertyGroup>
   <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
