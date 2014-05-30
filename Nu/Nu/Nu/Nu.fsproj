@@ -28,7 +28,7 @@
     <Externalconsole>true</Externalconsole>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="cp ${SolutionDir}/../SDL2#/Release/SDL2#.dll.config ${TargetDir}/SDL2#.dll.config" />
+        <Command type="AfterBuild" command="" />
       </CustomCommands>
     </CustomCommands>
     <EnvironmentVariables>
@@ -52,7 +52,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="cp ${SolutionDir}/../SDL2#/Release/SDL2#.dll.config ${TargetDir}/SDL2#.dll.config" />
+        <Command type="AfterBuild" command="" workingdir="" />
       </CustomCommands>
     </CustomCommands>
     <EnvironmentVariables>
@@ -197,10 +197,10 @@
     <None Include="libtiff-5.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="libSDL2_ttf-2.0.0.dylib">
+    <None Include="libSDL2-2.0.0.dylib">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="libSDL2-2.0.0.dylib">
+    <None Include="libSDL2_ttf-2.0.0.dylib">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="libSDL2_mixer-2.0.0.dylib">
@@ -208,8 +208,8 @@
     </None>
     <None Include="libSDL2_image-2.0.0.dylib">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+    </None>2
+    <None Include="..\..\SDL2#\Release\SDL2#.dll.config"><Link>SDL2#.dll.config</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None></ItemGroup>
   <ItemGroup>
     <Reference Include="FarseerPhysics">
       <HintPath>..\..\Farseer\FarseerPhysics.dll</HintPath>
